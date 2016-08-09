@@ -17,7 +17,15 @@ class StoryViewController: UIViewController, UIPopoverPresentationControllerDele
     @IBOutlet weak var done: UIButton!
     
     @IBAction func doneAction(sender: AnyObject) {
-        print("TODO: Open Initialization Popup")
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let personalizationTableViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PersonalizationTableViewController") as! PersonalizationTableViewController
+        let nav = UINavigationController(rootViewController: personalizationTableViewController)
+        nav.modalPresentationStyle = UIModalPresentationStyle.Popover
+        let popover = nav.popoverPresentationController
+        personalizationTableViewController.preferredContentSize = CGSizeMake(self.view.bounds.width, self.view.bounds.height)
+        popover!.sourceView = self.view
+        
+        self.presentViewController(nav, animated: true, completion: nil)
     }
     
     //MARK: Variables
@@ -53,4 +61,5 @@ class StoryViewController: UIViewController, UIPopoverPresentationControllerDele
         }
         self.done.setTitle(NSLocalizedString("DONE", comment: ""), forState: .Normal)
     }
+
 }

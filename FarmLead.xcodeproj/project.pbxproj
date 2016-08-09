@@ -14,6 +14,7 @@
 		1E1F2E611D599E5200D00AC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1F2E5F1D599E5200D00AC1 /* LaunchScreen.storyboard */; };
 		1E1F2E6C1D599E5200D00AC1 /* FarmLeadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F2E6B1D599E5200D00AC1 /* FarmLeadTests.swift */; };
 		1E1F2E771D599E5200D00AC1 /* FarmLeadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F2E761D599E5200D00AC1 /* FarmLeadUITests.swift */; };
+		1E6F4FBB1D5A787C002D6CBC /* PersonalizationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6F4FBA1D5A787C002D6CBC /* PersonalizationTableViewController.swift */; };
 		1E9777D21D59AB2A0073DCC3 /* MainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9777D11D59AB2A0073DCC3 /* MainHelper.swift */; };
 		1E9777D61D59BBB80073DCC3 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9777D51D59BBB80073DCC3 /* StoryViewController.swift */; };
 		1E9777D81D59CFF10073DCC3 /* OnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9777D71D59CFF10073DCC3 /* OnBoardViewController.swift */; };
@@ -54,6 +55,7 @@
 		1E1F2E721D599E5200D00AC1 /* FarmLeadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarmLeadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E1F2E761D599E5200D00AC1 /* FarmLeadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmLeadUITests.swift; sourceTree = "<group>"; };
 		1E1F2E781D599E5200D00AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E6F4FBA1D5A787C002D6CBC /* PersonalizationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizationTableViewController.swift; sourceTree = "<group>"; };
 		1E9777D11D59AB2A0073DCC3 /* MainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHelper.swift; sourceTree = "<group>"; };
 		1E9777D51D59BBB80073DCC3 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		1E9777D71D59CFF10073DCC3 /* OnBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				1E1F2E581D599E5200D00AC1 /* OnBoardPageViewController.swift */,
 				1E9777D71D59CFF10073DCC3 /* OnBoardViewController.swift */,
 				1E9777D51D59BBB80073DCC3 /* StoryViewController.swift */,
+				1E6F4FBA1D5A787C002D6CBC /* PersonalizationTableViewController.swift */,
 			);
 			name = OnBoarding;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				1E9777DA1D5A1E160073DCC3 /* APIManager.swift in Sources */,
 				1E9777D61D59BBB80073DCC3 /* StoryViewController.swift in Sources */,
 				1E9777D21D59AB2A0073DCC3 /* MainHelper.swift in Sources */,
+				1E6F4FBB1D5A787C002D6CBC /* PersonalizationTableViewController.swift in Sources */,
 				1E1F2E591D599E5200D00AC1 /* OnBoardPageViewController.swift in Sources */,
 				1E1F2E571D599E5200D00AC1 /* AppDelegate.swift in Sources */,
 				1E9777D81D59CFF10073DCC3 /* OnBoardViewController.swift in Sources */,
