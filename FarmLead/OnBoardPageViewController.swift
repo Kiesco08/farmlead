@@ -26,7 +26,7 @@ class OnBoardPageViewController: UIPageViewController {
         page2.initializeStory(NSLocalizedString("Negotiate your deal", comment: ""), descriptionText: NSLocalizedString("Set the terms anonymously", comment: ""), imageFileName: "intro-screen-img-2")
         
         let page3 = storyboard?.instantiateViewControllerWithIdentifier("StoryViewController") as! StoryViewController
-        page3.initializeStory(NSLocalizedString("Close the deal", comment: ""), descriptionText: NSLocalizedString("Complete the sale", comment: ""), imageFileName: "intro-screen-img-3")
+        page3.initializeStory(NSLocalizedString("Close the deal", comment: ""), descriptionText: NSLocalizedString("Complete the sale", comment: ""), imageFileName: "intro-screen-img-3", showDone: true)
         
         pages.append(page1)
         pages.append(page2)

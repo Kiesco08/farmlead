@@ -12,6 +12,8 @@ class OnBoardViewController: UIViewController {
 
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var done: UIButton!
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let onBoardPageViewController = segue.destinationViewController as? OnBoardPageViewController {
             onBoardPageViewController.onBoardDelegate = self

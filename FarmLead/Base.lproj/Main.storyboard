@@ -110,9 +110,21 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-rf-gwl">
+                                <rect key="frame" x="515" y="543" width="43" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneAction:" destination="q0n-Oa-rPN" eventType="touchUpInside" id="AGv-4o-Zfn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2884308397769928" green="0.62336057424545288" blue="0.42541450262069702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="AOi-rf-gwl" firstAttribute="trailing" secondItem="F7v-Ii-82Z" secondAttribute="trailing" constant="-8" id="7VP-wh-JCQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AOi-rf-gwl" secondAttribute="trailing" constant="22" id="Aq2-eu-3l3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="czl-Qe-Xh9" secondAttribute="trailing" id="CBO-OS-FkA"/>
                             <constraint firstItem="CuG-Fj-YuY" firstAttribute="top" secondItem="F7v-Ii-82Z" secondAttribute="bottom" constant="100" id="Cip-tu-3h6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7qZ-pJ-F1Z" secondAttribute="trailing" constant="7" id="Da1-E9-4hm"/>
@@ -121,19 +133,28 @@
                             <constraint firstAttribute="leadingMargin" secondItem="F7v-Ii-82Z" secondAttribute="leading" id="K3y-dx-I4o"/>
                             <constraint firstItem="7qZ-pJ-F1Z" firstAttribute="top" secondItem="BXJ-tC-Rsc" secondAttribute="bottom" constant="100" id="OSE-lT-yCH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F7v-Ii-82Z" secondAttribute="trailing" id="X6Q-x6-7Et"/>
+                            <constraint firstAttribute="bottom" secondItem="AOi-rf-gwl" secondAttribute="bottom" constant="27" id="f9T-F0-yrk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AOi-rf-gwl" secondAttribute="trailing" constant="8" id="gxI-rW-dPZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="czl-Qe-Xh9" secondAttribute="leading" id="saj-r4-qz6"/>
                             <constraint firstItem="F7v-Ii-82Z" firstAttribute="top" secondItem="czl-Qe-Xh9" secondAttribute="bottom" constant="16" id="zxd-sk-Jej"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7VP-wh-JCQ"/>
+                                <exclude reference="gxI-rW-dPZ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="F7v-Ii-82Z" id="LvL-sc-smt"/>
+                        <outlet property="done" destination="AOi-rf-gwl" id="iht-Df-iLa"/>
                         <outlet property="image" destination="7qZ-pJ-F1Z" id="Jf2-Tb-Rnu"/>
                         <outlet property="titleLabel" destination="czl-Qe-Xh9" id="c0s-W7-WOR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJW-62-KGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415" y="660"/>
+            <point key="canvasLocation" x="1440" y="635"/>
         </scene>
     </scenes>
     <resources>
