@@ -5,7 +5,6 @@ target 'FarmLead' do
   use_frameworks!
 
   # Pods for FarmLead
-  pod 'Onboard'
 
   target 'FarmLeadTests' do
     inherit! :search_paths
