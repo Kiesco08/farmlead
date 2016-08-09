@@ -122,15 +122,12 @@
 		1E1F2E551D599E5200D00AC1 /* FarmLead */ = {
 			isa = PBXGroup;
 			children = (
-				1E9777D01D59AB1E0073DCC3 /* Helper */,
 				1E1F2E561D599E5200D00AC1 /* AppDelegate.swift */,
-				1E1F2E581D599E5200D00AC1 /* OnBoardPageViewController.swift */,
-				1E9777D71D59CFF10073DCC3 /* OnBoardViewController.swift */,
-				1E9777D51D59BBB80073DCC3 /* StoryViewController.swift */,
-				1E1F2E5A1D599E5200D00AC1 /* Main.storyboard */,
+				1ED35CDA1D5A32B200FAFA9A /* Views */,
+				1ED35CD81D5A328B00FAFA9A /* OnBoarding */,
+				1E9777D01D59AB1E0073DCC3 /* Helper */,
+				1ED35CD91D5A32A500FAFA9A /* Supporting Files */,
 				1E1F2E5D1D599E5200D00AC1 /* Assets.xcassets */,
-				1E1F2E5F1D599E5200D00AC1 /* LaunchScreen.storyboard */,
-				1E1F2E621D599E5200D00AC1 /* Info.plist */,
 			);
 			path = FarmLead;
 			sourceTree = "<group>";
@@ -160,6 +157,33 @@
 				1E9777D91D5A1E160073DCC3 /* APIManager.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		1ED35CD81D5A328B00FAFA9A /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				1E1F2E581D599E5200D00AC1 /* OnBoardPageViewController.swift */,
+				1E9777D71D59CFF10073DCC3 /* OnBoardViewController.swift */,
+				1E9777D51D59BBB80073DCC3 /* StoryViewController.swift */,
+			);
+			name = OnBoarding;
+			sourceTree = "<group>";
+		};
+		1ED35CD91D5A32A500FAFA9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E1F2E621D599E5200D00AC1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1ED35CDA1D5A32B200FAFA9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E1F2E5A1D599E5200D00AC1 /* Main.storyboard */,
+				1E1F2E5F1D599E5200D00AC1 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		6FABD6CEC0B3B918849EBEF4 /* Pods */ = {

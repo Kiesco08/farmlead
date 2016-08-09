@@ -9,11 +9,11 @@
 import UIKit
 
 class OnBoardViewController: UIViewController {
-
+    
+    //MARK: UI Connections
     @IBOutlet weak var pageControl: UIPageControl!
     
-    @IBOutlet weak var done: UIButton!
-    
+    //MARK: View life cycle
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let onBoardPageViewController = segue.destinationViewController as? OnBoardPageViewController {
             onBoardPageViewController.onBoardDelegate = self
@@ -22,6 +22,7 @@ class OnBoardViewController: UIViewController {
     
 }
 
+//MARK: Protocol implementation
 extension OnBoardViewController: OnBoardPageViewControllerDelegate {
     
     func onBoardPageViewController(onBoardPageViewController: OnBoardPageViewController, didUpdatePageCount count: Int) {

@@ -17,7 +17,7 @@ let COMMODITY_UNIT_END_POINT = "http://dualstack.FL2-Dev-api02-1164870265.us-eas
 let REGION_SEARCH_END_POINT = "http://dualstack.FL2-Dev-api02-1164870265.us-east- 1.elb.amazonaws.com/api/v2/search_region"
 let COMMODITY_UNIT_KEY = "commodityUnit"
 
-//MARK: Methods
+//MARK: Functions
 func fetchAndCacheInitialData() {
     fetchAndCacheCommodityUnits()
 }

@@ -10,9 +10,11 @@ import UIKit
 
 class OnBoardPageViewController: UIPageViewController {
     
-    var pages = [UIViewController]()
-    var onBoardDelegate: OnBoardPageViewControllerDelegate?
-    
+    //MARK: Variables
+    var pages = [UIViewController]() // Holds story pages
+    var onBoardDelegate: OnBoardPageViewControllerDelegate? // Allows to react page count and index change
+
+    //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,7 @@ class OnBoardPageViewController: UIPageViewController {
         setupPageViewController()
     }
     
+    //MARK: Functions
     func setupPageViewController() {
         let page1 = storyboard?.instantiateViewControllerWithIdentifier("StoryViewController") as! StoryViewController
         page1.initializeStory(NSLocalizedString("Find a deal", comment: ""), descriptionText: NSLocalizedString("Search or post grain deals", comment: ""), imageFileName: "intro-screen-img-1")
@@ -42,6 +45,7 @@ class OnBoardPageViewController: UIPageViewController {
     }
 }
 
+//MARK: Protocol implementation
 extension OnBoardPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
@@ -95,13 +99,18 @@ extension OnBoardPageViewController: UIPageViewControllerDataSource, UIPageViewC
                             didFinishAnimating finished: Bool,
                            previousViewControllers: [UIViewController],
                            transitionCompleted completed: Bool) {
+        
         if let firstViewController = viewControllers?.first,
             let index = pages.indexOf(firstViewController) {
+            
             onBoardDelegate?.onBoardPageViewController(self, didUpdatePageIndex: index)
+            
         }
+        
     }
 }
 
+//MARK: Protocol implementation
 protocol OnBoardPageViewControllerDelegate: class {
     
     // Called when the number of pages is updated

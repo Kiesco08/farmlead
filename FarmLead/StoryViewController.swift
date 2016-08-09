@@ -8,25 +8,31 @@
 
 import UIKit
 
-class StoryViewController: UIViewController {
+class StoryViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    // UI Connections
+    //MARK: UI Connections
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var done: UIButton!
     
-    // Variables
+    @IBAction func doneAction(sender: AnyObject) {
+        print("TODO: Open Initialization Popup")
+    }
+    
+    //MARK: Variables
     var titleText: String?
     var descriptionText: String?
     var imageFileName: String?
     var showDone: Bool?
     
+    //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
     
+    //MARK: Functions
     func initializeStory(titleText: String, descriptionText: String, imageFileName: String, showDone: Bool? = false) {
         self.titleText = titleText
         self.descriptionText = descriptionText
@@ -46,9 +52,5 @@ class StoryViewController: UIViewController {
             self.done.hidden = true
         }
         self.done.setTitle(NSLocalizedString("DONE", comment: ""), forState: .Normal)
-    }
-    
-    @IBAction func doneAction(sender: AnyObject) {
-        print("TODO: Done clicked")
     }
 }

@@ -13,9 +13,11 @@ import Alamofire
 import ReachabilitySwift
 import SwiftyJSON
 
+//MARK: Constants
 let noInternetCode = -1009
 let apiDateFormat = "yyyy-mm-dd hh:mm:ss"
 
+//MARK: Functions
 func callRestApi(endPoint: String, method: Alamofire.Method, withBody body: [String: AnyObject] = [:], completion: (statusCode: Int, json: JSON?, error: String?) -> Void) {
     
     // Make sure there is internet connection
@@ -51,7 +53,7 @@ func handleAPIResultsFromTheModelSide(isSuccess: Bool, resultValue: AnyObject, s
         // Check if there is an API generated error
         let json = JSON(resultValue)
         
-        // There was an API error, handle it and return
+        // There was no API error, handle it and return
         if json != nil {
             completion(statusCode: statusCode, json: json, error: nil)
             return
