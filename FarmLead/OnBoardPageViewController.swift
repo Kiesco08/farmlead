@@ -19,6 +19,10 @@ class OnBoardPageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         
+        setupPageViewController()
+    }
+    
+    func setupPageViewController() {
         let page1 = storyboard?.instantiateViewControllerWithIdentifier("StoryViewController") as! StoryViewController
         page1.initializeStory(NSLocalizedString("Find a deal", comment: ""), descriptionText: NSLocalizedString("Search or post grain deals", comment: ""), imageFileName: "intro-screen-img-1")
         
