@@ -14,8 +14,13 @@ import SwiftyJSON
 let FARM_LEAD_GREEN = "4d9e6e"
 let storyboardTotalPages = 3
 let COMMODITY_UNIT_END_POINT = "http://dualstack.FL2-Dev-api02-1164870265.us-east-1.elb.amazonaws.com/api/v2/data"
-let REGION_SEARCH_END_POINT = "http://dualstack.FL2-Dev-api02-1164870265.us-east- 1.elb.amazonaws.com/api/v2/search_region"
+let REGION_SEARCH_END_POINT = "http://dualstack.FL2-Dev-api02-1164870265.us-east-1.elb.amazonaws.com/api/v2/search_region"
 let COMMODITY_UNIT_KEY = "commodityUnit"
+let SEARCH_DELAY: Int64 = 3 / 10
+
+//MARK: Utility Constants
+let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
+let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
 
 //MARK: Functions
 func fetchAndCacheInitialData() {

@@ -18,7 +18,7 @@ let noInternetCode = -1009
 let apiDateFormat = "yyyy-mm-dd hh:mm:ss"
 
 //MARK: Functions
-func callRestApi(endPoint: String, method: Alamofire.Method, withBody body: [String: AnyObject] = [:], completion: (statusCode: Int, json: JSON?, error: String?) -> Void) {
+func callRestApi(endPoint: String, method: Alamofire.Method, withBody body: [String: AnyObject] = [:], completion: (statusCode: Int?, json: JSON?, error: String?) -> Void) {
     
     // Make sure there is internet connection
     let connectedToInternet = checkInternetConnectivity()
@@ -35,7 +35,7 @@ func callRestApi(endPoint: String, method: Alamofire.Method, withBody body: [Str
             .responseJSON { response in
                 
                 // Handle results on the model side
-                handleAPIResultsFromTheModelSide(response.result.isSuccess, resultValue: response.result.value!, statusCode: (response.response?.statusCode)!, apiDescription: endPoint, completion: { (statusCode, json, error) in
+                handleAPIResultsFromTheModelSide(response.result.isSuccess, resultValue: response.result.value, statusCode: response.response?.statusCode, apiDescription: endPoint, completion: { (statusCode, json, error) in
                     completion(statusCode: statusCode, json: json, error: error)
                 })
         }
@@ -46,12 +46,12 @@ func callRestApi(endPoint: String, method: Alamofire.Method, withBody body: [Str
     }
 }
 
-func handleAPIResultsFromTheModelSide(isSuccess: Bool, resultValue: AnyObject, statusCode: Int, apiDescription: String, completion: (statusCode: Int, json: JSON?, error: String?) -> ()) {
+func handleAPIResultsFromTheModelSide(isSuccess: Bool, resultValue: AnyObject?, statusCode: Int?, apiDescription: String, completion: (statusCode: Int?, json: JSON?, error: String?) -> ()) {
     
     if isSuccess {
         
         // Check if there is an API generated error
-        let json = JSON(resultValue)
+        let json = JSON(resultValue!)
         
         // There was no API error, handle it and return
         if json != nil {

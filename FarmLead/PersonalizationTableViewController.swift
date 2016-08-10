@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import Alamofire
 
 class PersonalizationTableViewController: UITableViewController {
+    
+    //MARK: UI Connections
+    @IBOutlet weak var regionTextField: AutoCompleteTextField!
+    @IBOutlet weak var commodityTextField: UITextField!
     
     //MARK: Constants
     let sectionNames = [NSLocalizedString("Where are you located?", comment: ""),
                         NSLocalizedString("Which unit do you prefer to deal with?", comment: "")]
+    let sectionHeaderPadding: CGFloat = 20
+    
+    //MARK: Variables
+    var searchRequest: Alamofire.Request?
     
     //MARK: View life cycle
     override func viewDidLoad() {
@@ -32,6 +41,9 @@ class PersonalizationTableViewController: UITableViewController {
     //MARK: Functions
     func setupViews() {
         configureToolbar()
+        customizeRegionTextField()
+        customizeCommodityTextField()
+        handleRegionTextFieldInterfaces()
     }
     
     func configureToolbar() {
@@ -44,12 +56,60 @@ class PersonalizationTableViewController: UITableViewController {
         
         let defaultAction = UIAlertAction(title: NSLocalizedString("Got it", comment: ""), style: .Default, handler: { action in
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissPopup()
             
         })
         alertController.addAction(defaultAction)
         
         presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func customizeRegionTextField() {
+        // Delegate
+        self.regionTextField.delegate = self
+        
+        // Keyboard toolbar
+        let emailKeyboardToolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, SCREEN_WIDTH, 40))
+        emailKeyboardToolbar.barStyle = UIBarStyle.Default
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: UIBarButtonItemStyle.Done, target: self, action: #selector(dismissKeyboard))
+        emailKeyboardToolbar.setItems([space, done], animated: false)
+        emailKeyboardToolbar.sizeToFit()
+        
+        self.regionTextField.inputAccessoryView = emailKeyboardToolbar
+    }
+    
+    func customizeCommodityTextField() {
+        // Delegate
+        self.commodityTextField.delegate = self
+        
+        // Keyboard toolbar
+        let emailKeyboardToolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, SCREEN_WIDTH, 40))
+        emailKeyboardToolbar.barStyle = UIBarStyle.Default
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: UIBarButtonItemStyle.Done, target: self, action: #selector(dismissKeyboard))
+        emailKeyboardToolbar.setItems([space, done], animated: false)
+        emailKeyboardToolbar.sizeToFit()
+        
+        self.commodityTextField.inputAccessoryView = emailKeyboardToolbar
+    }
+    
+    func handleRegionTextFieldInterfaces() {
+        regionTextField.onTextChange = {[weak self] text in
+            if !text.isEmpty && text.characters.count > 1 {
+                if let searchRequest = self?.searchRequest {
+                    searchRequest.cancel()
+                }
+                let triggerTime = (Int64(NSEC_PER_SEC) * SEARCH_DELAY)
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+                    fetchRegions(text)
+                })
+            }
+        }
+        
+//        regionTextField.onSelect = {[weak self] text, indexpath in
+//            
+//        }
     }
     
     func calculateHeightForHeaderSection(section: Int) -> UIView {
@@ -67,7 +127,7 @@ class PersonalizationTableViewController: UITableViewController {
         lblSectionName.sizeToFit()
         
         // Create section title frame
-        var frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, lblSectionName.frame.size.height)
+        var frame = CGRectMake(0, 0, SCREEN_WIDTH, lblSectionName.frame.size.height)
         frame.origin.x = 10
         frame.origin.y = 10
         frame.size.width = self.view.bounds.size.width - frame.origin.x
@@ -96,7 +156,7 @@ class PersonalizationTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return calculateHeightForHeaderSection(section).frame.size.height + 16 // Padding
+        return calculateHeightForHeaderSection(section).frame.size.height + sectionHeaderPadding // Padding
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -121,4 +181,8 @@ class PersonalizationTableViewController: UITableViewController {
         }
     }
 
+}
+
+extension UIViewController: UITextFieldDelegate {
+    
 }

@@ -174,7 +174,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-1T-7pm">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-1T-7pm" customClass="AutoCompleteTextField" customModule="FarmLead" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="8" width="568" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -221,6 +221,10 @@
                             <outlet property="delegate" destination="zBT-eb-ZPp" id="hK7-Vj-VRC"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="commodityTextField" destination="w4u-5x-BVh" id="NOF-XE-4MQ"/>
+                        <outlet property="regionTextField" destination="DaR-1T-7pm" id="69I-6K-UFN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Hy-iE-pm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
