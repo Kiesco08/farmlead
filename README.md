@@ -4,7 +4,10 @@ FarmLead coding test. This Swift project contains a intro to the FarmLead iOS ap
 - [x] Welcome Screen with swipe gestures and page indicator
 - [x] API calls and data parsing using Alamofire and SwiftJSON
 - [x] Data Caching
-- [ ] Popup for initial personalization
+- [x] Popup for initial personalization
+
+TODO:
+- [ ] Autocomplete functionality (API returns error when following documentation)
 
 ### In order to Build the project:
 - Clone this project by typing the following in your terminal console:
