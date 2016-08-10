@@ -6,7 +6,7 @@ FarmLead coding test. This Swift project contains a intro to the FarmLead iOS ap
 - [x] Data Caching
 - [x] Popup for initial personalization
 
-TODO:
+**TODO:**
 - [ ] Autocomplete functionality (API returns error when following documentation)
 
 ### In order to Build the project:
@@ -14,8 +14,8 @@ TODO:
 `cd <directory/of/your/choice>`
 `git clone https://github.com/Kiesco08/farmlead.git`
 
-- Open XCode then click on File > Open
+- Open XCode then click on **File** > **Open**
 
 - Navigate to your project, then double click on **FarmLead.xcworkspace**
 
-- Finally, click on Product > Run
+- Finally, click on **Product** > **Run**
