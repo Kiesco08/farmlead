@@ -73,7 +73,7 @@ public class AutoCompleteTextField:UITextField {
     public override func willMoveToSuperview(newSuperview: UIView?) {
         super.willMoveToSuperview(newSuperview)
         commonInit()
-        setupAutocompleteTable(newSuperview!)
+        setupAutocompleteTable(newSuperview)
     }
     
     private func commonInit(){
@@ -85,14 +85,14 @@ public class AutoCompleteTextField:UITextField {
         self.addTarget(self, action: #selector(textFieldDidEndEditing), forControlEvents: .EditingDidEnd)
     }
     
-    private func setupAutocompleteTable(view:UIView){
+    private func setupAutocompleteTable(view:UIView?){
         let screenSize = UIScreen.mainScreen().bounds.size
         let tableView = UITableView(frame: CGRectMake(self.frame.origin.x, self.frame.origin.y + CGRectGetHeight(self.frame), screenSize.width - (self.frame.origin.x * 2), 30.0))
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = autoCompleteCellHeight
         tableView.hidden = hidesWhenEmpty ?? true
-        view.addSubview(tableView)
+        view?.addSubview(tableView)
         autoCompleteTableView = tableView
         
         autoCompleteTableHeight = 100.0

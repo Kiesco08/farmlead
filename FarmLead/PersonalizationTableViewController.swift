@@ -19,9 +19,11 @@ class PersonalizationTableViewController: UITableViewController {
     let sectionNames = [NSLocalizedString("Where are you located?", comment: ""),
                         NSLocalizedString("Which unit do you prefer to deal with?", comment: "")]
     let sectionHeaderPadding: CGFloat = 20
+    let commodityUnitPickerView = UIPickerView()
     
     //MARK: Variables
     var searchRequest: Alamofire.Request?
+    var commodityUnits: [CommodityUnit]?
     
     //MARK: View life cycle
     override func viewDidLoad() {
@@ -65,7 +67,6 @@ class PersonalizationTableViewController: UITableViewController {
     }
     
     func customizeRegionTextField() {
-        // Delegate
         self.regionTextField.delegate = self
         
         // Keyboard toolbar
@@ -80,7 +81,6 @@ class PersonalizationTableViewController: UITableViewController {
     }
     
     func customizeCommodityTextField() {
-        // Delegate
         self.commodityTextField.delegate = self
         
         // Keyboard toolbar
@@ -92,6 +92,35 @@ class PersonalizationTableViewController: UITableViewController {
         emailKeyboardToolbar.sizeToFit()
         
         self.commodityTextField.inputAccessoryView = emailKeyboardToolbar
+    }
+    
+    func setupCommodityPickerView() {
+        commodityUnitPickerView.delegate = self
+        self.commodityTextField.inputView = commodityUnitPickerView
+        
+        // Initialize commodity units if any
+        if let commodityUnits = getCommodityUnits() {
+            self.commodityUnits = commodityUnits
+            commodityUnitPickerView.reloadAllComponents()
+            var indexToSelect = 0
+            if let selectedCommodityUnitId = getIntFromUserDefaults(SELECTED_COMMODITY_UNIT_KEY) {
+                for (index, commodityUnit) in commodityUnits.enumerate() {
+                    if commodityUnit.id == selectedCommodityUnitId {
+                        indexToSelect = index
+                        break
+                    }
+                }
+            } else {
+                print("No commodity unit saved")
+            }
+            setCommodity(commodityUnits, index: indexToSelect)
+        }
+
+    }
+    
+    func setCommodity(commodityUnits: [CommodityUnit], index: Int) {
+        print("Setting commodity at index \(index): \(commodityUnits[index].name)")
+        commodityTextField.text = commodityUnits[index].name
     }
     
     func handleRegionTextFieldInterfaces() {
@@ -107,6 +136,7 @@ class PersonalizationTableViewController: UITableViewController {
             }
         }
         
+// TODO: Implement when search API works
 //        regionTextField.onSelect = {[weak self] text, indexpath in
 //            
 //        }
@@ -143,8 +173,17 @@ class PersonalizationTableViewController: UITableViewController {
         return customView
 
     }
+
+}
+
+//MARK: Protocol implementation
+extension PersonalizationTableViewController: UITextFieldDelegate {
+    // TODO: Implement when search API works
+}
+
+// MARK: - Table view data source
+extension PersonalizationTableViewController {
     
-    // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return sectionNames.count
@@ -169,20 +208,52 @@ class PersonalizationTableViewController: UITableViewController {
         
         switch indexPath.section {
             
-            case 0: // LOCATION
-                break
-                
-            case 1: // COMMODITY
-                break
+        case 0: // LOCATION
+            break
             
-            default:
-                break
+        case 1: // COMMODITY
+            break
+            
+        default:
+            break
             
         }
     }
-
 }
 
-extension UIViewController: UITextFieldDelegate {
+extension PersonalizationTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if let commodityUnits = commodityUnits {
+            return commodityUnits.count
+        }
+        return 0
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return commodityUnits?[row].name
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // Get level select and update its name on the UI
+        guard let selectedCommodityUnit = commodityUnits?[row] else {
+            return
+        }
+        
+        commodityTextField.text = selectedCommodityUnit.name
+        
+        print("****")
+        print(selectedCommodityUnit.id)
+        print(selectedCommodityUnit.name)
+        print("****")
+        
+        if let selectedCommodityUnitId = selectedCommodityUnit.id {
+            saveCommodityId(selectedCommodityUnitId)
+        }
+    }
 }

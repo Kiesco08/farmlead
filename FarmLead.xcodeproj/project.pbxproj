@@ -17,10 +17,13 @@
 		1E6F4FBB1D5A787C002D6CBC /* PersonalizationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6F4FBA1D5A787C002D6CBC /* PersonalizationTableViewController.swift */; };
 		1E6F4FBD1D5A9985002D6CBC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6F4FBC1D5A9985002D6CBC /* UIViewControllerExtension.swift */; };
 		1E6F4FBF1D5A9C18002D6CBC /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6F4FBE1D5A9C18002D6CBC /* AutoCompleteTextField.swift */; };
+		1E6F4FC51D5AABB8002D6CBC /* CommodityUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6F4FC41D5AABB8002D6CBC /* CommodityUnit.swift */; };
+		1E6F4FC71D5AACF3002D6CBC /* CommodityUnitPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6F4FC61D5AACF3002D6CBC /* CommodityUnitPage.swift */; };
 		1E9777D21D59AB2A0073DCC3 /* MainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9777D11D59AB2A0073DCC3 /* MainHelper.swift */; };
 		1E9777D61D59BBB80073DCC3 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9777D51D59BBB80073DCC3 /* StoryViewController.swift */; };
 		1E9777D81D59CFF10073DCC3 /* OnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9777D71D59CFF10073DCC3 /* OnBoardViewController.swift */; };
 		1E9777DA1D5A1E160073DCC3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9777D91D5A1E160073DCC3 /* APIManager.swift */; };
+		1EE1991E1D5AB25F0013175F /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE1991D1D5AB25F0013175F /* PickerTextField.swift */; };
 		2348F25D5BA9249E7757ED6F /* Pods_FarmLeadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF42ACA68D3654AE205410C /* Pods_FarmLeadUITests.framework */; };
 		5D5892F963FC5DD878503767 /* Pods_FarmLeadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B972B06B02ADF2614CB78AFB /* Pods_FarmLeadTests.framework */; };
 		E4F4F84E51FF95FB0F9CA94F /* Pods_FarmLead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFFEDDC3C72902082E0011 /* Pods_FarmLead.framework */; };
@@ -60,10 +63,13 @@
 		1E6F4FBA1D5A787C002D6CBC /* PersonalizationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizationTableViewController.swift; sourceTree = "<group>"; };
 		1E6F4FBC1D5A9985002D6CBC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1E6F4FBE1D5A9C18002D6CBC /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		1E6F4FC41D5AABB8002D6CBC /* CommodityUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommodityUnit.swift; sourceTree = "<group>"; };
+		1E6F4FC61D5AACF3002D6CBC /* CommodityUnitPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommodityUnitPage.swift; sourceTree = "<group>"; };
 		1E9777D11D59AB2A0073DCC3 /* MainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHelper.swift; sourceTree = "<group>"; };
 		1E9777D51D59BBB80073DCC3 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		1E9777D71D59CFF10073DCC3 /* OnBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
 		1E9777D91D5A1E160073DCC3 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		1EE1991D1D5AB25F0013175F /* PickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		54523D0B11CD614C37F1DA67 /* Pods-FarmLead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmLead.release.xcconfig"; path = "Pods/Target Support Files/Pods-FarmLead/Pods-FarmLead.release.xcconfig"; sourceTree = "<group>"; };
 		5E77ED2D395CC18D5A7F7F6F /* Pods-FarmLeadUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmLeadUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FarmLeadUITests/Pods-FarmLeadUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DFCE4037A274EA568D6AEC4 /* Pods-FarmLeadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmLeadUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FarmLeadUITests/Pods-FarmLeadUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,9 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				1E1F2E561D599E5200D00AC1 /* AppDelegate.swift */,
-				1ED35CDA1D5A32B200FAFA9A /* Views */,
-				1ED35CD81D5A328B00FAFA9A /* OnBoarding */,
-				1E9777D01D59AB1E0073DCC3 /* Helper */,
+				1E6F4FC11D5AAB3D002D6CBC /* Model */,
+				1ED35CDA1D5A32B200FAFA9A /* View */,
+				1E6F4FC01D5AAB2C002D6CBC /* Controller */,
 				1ED35CD91D5A32A500FAFA9A /* Supporting Files */,
 				1E1F2E5D1D599E5200D00AC1 /* Assets.xcassets */,
 			);
@@ -156,13 +162,48 @@
 			path = FarmLeadUITests;
 			sourceTree = "<group>";
 		};
+		1E6F4FC01D5AAB2C002D6CBC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1E6F4FC21D5AAB4C002D6CBC /* Helper */,
+				1ED35CD81D5A328B00FAFA9A /* OnBoarding */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1E6F4FC11D5AAB3D002D6CBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E6F4FC31D5AAB8E002D6CBC /* Object */,
+				1E9777D01D59AB1E0073DCC3 /* Helper */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1E6F4FC21D5AAB4C002D6CBC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1E6F4FBE1D5A9C18002D6CBC /* AutoCompleteTextField.swift */,
+				1E6F4FBC1D5A9985002D6CBC /* UIViewControllerExtension.swift */,
+				1EE1991D1D5AB25F0013175F /* PickerTextField.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		1E6F4FC31D5AAB8E002D6CBC /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				1E6F4FC41D5AABB8002D6CBC /* CommodityUnit.swift */,
+				1E6F4FC61D5AACF3002D6CBC /* CommodityUnitPage.swift */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
 		1E9777D01D59AB1E0073DCC3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				1E9777D11D59AB2A0073DCC3 /* MainHelper.swift */,
 				1E9777D91D5A1E160073DCC3 /* APIManager.swift */,
-				1E6F4FBC1D5A9985002D6CBC /* UIViewControllerExtension.swift */,
-				1E6F4FBE1D5A9C18002D6CBC /* AutoCompleteTextField.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -186,13 +227,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1ED35CDA1D5A32B200FAFA9A /* Views */ = {
+		1ED35CDA1D5A32B200FAFA9A /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1E1F2E5A1D599E5200D00AC1 /* Main.storyboard */,
 				1E1F2E5F1D599E5200D00AC1 /* LaunchScreen.storyboard */,
 			);
-			name = Views;
+			name = View;
 			sourceTree = "<group>";
 		};
 		6FABD6CEC0B3B918849EBEF4 /* Pods */ = {
@@ -482,13 +523,16 @@
 			files = (
 				1E9777DA1D5A1E160073DCC3 /* APIManager.swift in Sources */,
 				1E9777D61D59BBB80073DCC3 /* StoryViewController.swift in Sources */,
+				1E6F4FC71D5AACF3002D6CBC /* CommodityUnitPage.swift in Sources */,
 				1E9777D21D59AB2A0073DCC3 /* MainHelper.swift in Sources */,
+				1E6F4FC51D5AABB8002D6CBC /* CommodityUnit.swift in Sources */,
 				1E6F4FBF1D5A9C18002D6CBC /* AutoCompleteTextField.swift in Sources */,
 				1E6F4FBB1D5A787C002D6CBC /* PersonalizationTableViewController.swift in Sources */,
 				1E6F4FBD1D5A9985002D6CBC /* UIViewControllerExtension.swift in Sources */,
 				1E1F2E591D599E5200D00AC1 /* OnBoardPageViewController.swift in Sources */,
 				1E1F2E571D599E5200D00AC1 /* AppDelegate.swift in Sources */,
 				1E9777D81D59CFF10073DCC3 /* OnBoardViewController.swift in Sources */,
+				1EE1991E1D5AB25F0013175F /* PickerTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
