@@ -167,24 +167,25 @@
                         <sections>
                             <tableViewSection headerTitle="Section 1" id="8E1-yG-BDu">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="62h-fa-BpY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="62h-fa-BpY">
                                         <rect key="frame" x="0.0" y="44" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="62h-fa-BpY" id="WE0-0g-5od">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-1T-7pm" customClass="AutoCompleteTextField" customModule="FarmLead" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-Dy-kdD">
                                                     <rect key="frame" x="16" y="8" width="568" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="DaR-1T-7pm" firstAttribute="top" secondItem="WE0-0g-5od" secondAttribute="topMargin" id="1Zg-O1-BDL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="DaR-1T-7pm" secondAttribute="trailing" constant="8" id="74Q-Yz-0VW"/>
-                                                <constraint firstItem="DaR-1T-7pm" firstAttribute="leading" secondItem="WE0-0g-5od" secondAttribute="leadingMargin" constant="8" id="KEL-ey-fP2"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="DaR-1T-7pm" secondAttribute="bottom" id="W2w-BA-WiH"/>
+                                                <constraint firstItem="oR8-Dy-kdD" firstAttribute="bottom" secondItem="WE0-0g-5od" secondAttribute="bottomMargin" id="0RF-m1-jXd"/>
+                                                <constraint firstItem="oR8-Dy-kdD" firstAttribute="top" secondItem="WE0-0g-5od" secondAttribute="topMargin" id="LbE-M1-sFS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oR8-Dy-kdD" secondAttribute="trailing" constant="8" id="jZ0-Ah-4st"/>
+                                                <constraint firstItem="oR8-Dy-kdD" firstAttribute="leading" secondItem="WE0-0g-5od" secondAttribute="leadingMargin" constant="8" id="p72-51-5Zt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -192,7 +193,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Section 2" id="gPK-hb-Px6">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qb8-oA-eR8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="qb8-oA-eR8">
                                         <rect key="frame" x="0.0" y="132" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qb8-oA-eR8" id="aCm-kt-khc">
@@ -200,7 +201,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Commodity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4u-5x-BVh" customClass="PickerTextField" customModule="FarmLead" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="8" width="568" height="28"/>
+                                                    <rect key="frame" x="16" y="0.0" width="568" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -208,8 +209,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="w4u-5x-BVh" secondAttribute="trailing" constant="8" id="5V5-c7-wHe"/>
                                                 <constraint firstItem="w4u-5x-BVh" firstAttribute="leading" secondItem="aCm-kt-khc" secondAttribute="leadingMargin" constant="8" id="MGC-LD-XEF"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="w4u-5x-BVh" secondAttribute="bottom" id="Q2T-nC-Hpv"/>
-                                                <constraint firstItem="w4u-5x-BVh" firstAttribute="top" secondItem="aCm-kt-khc" secondAttribute="topMargin" id="kmI-80-nOf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="w4u-5x-BVh" secondAttribute="bottom" constant="-8" id="Q2T-nC-Hpv"/>
+                                                <constraint firstItem="w4u-5x-BVh" firstAttribute="top" secondItem="aCm-kt-khc" secondAttribute="topMargin" constant="-8" id="kmI-80-nOf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -222,13 +223,86 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="cityLabel" destination="oR8-Dy-kdD" id="ffn-xt-eDD"/>
                         <outlet property="commodityTextField" destination="w4u-5x-BVh" id="NOF-XE-4MQ"/>
-                        <outlet property="regionTextField" destination="DaR-1T-7pm" id="69I-6K-UFN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Hy-iE-pm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2104" y="642"/>
+        </scene>
+        <!--Region Selection View Controller-->
+        <scene sceneID="X3b-Va-6my">
+            <objects>
+                <viewController storyboardIdentifier="RegionSelectionViewController" id="nfY-rY-RHs" customClass="RegionSelectionViewController" customModule="FarmLead" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j6m-SE-R2k"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ga7-Wq-AHG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tyc-me-H2w">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TZ4-eb-4KF" customClass="AutoCompleteTextField" customModule="FarmLead" customModuleProvider="target">
+                                <rect key="frame" x="20" y="36" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TZ4-eb-4KF" firstAttribute="leading" secondItem="Tyc-me-H2w" secondAttribute="leadingMargin" id="Nck-WZ-ZlM"/>
+                            <constraint firstItem="TZ4-eb-4KF" firstAttribute="trailing" secondItem="Tyc-me-H2w" secondAttribute="trailingMargin" id="SQz-Dj-Yyp"/>
+                            <constraint firstItem="TZ4-eb-4KF" firstAttribute="top" secondItem="j6m-SE-R2k" secondAttribute="bottom" constant="16" id="azF-Q0-CfS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="regionTextField" destination="TZ4-eb-4KF" id="ZsN-gT-EGj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKi-8a-YvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2761" y="-7"/>
+        </scene>
+        <!--Summary View Controller-->
+        <scene sceneID="Iwb-pS-3UO">
+            <objects>
+                <viewController storyboardIdentifier="summary" id="b19-Nv-85e" customClass="SummaryViewController" customModule="FarmLead" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fOM-si-axz"/>
+                        <viewControllerLayoutGuide type="bottom" id="bV0-wO-fDw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o46-Nl-3u8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjD-6i-Ja9">
+                                <rect key="frame" x="28" y="289" width="544" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2884308397769928" green="0.62336057424545288" blue="0.42541450262069702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="MjD-6i-Ja9" secondAttribute="trailing" constant="8" id="6hV-v1-idN"/>
+                            <constraint firstItem="MjD-6i-Ja9" firstAttribute="leading" secondItem="o46-Nl-3u8" secondAttribute="leadingMargin" constant="8" id="aKv-H3-UYx"/>
+                            <constraint firstItem="MjD-6i-Ja9" firstAttribute="centerX" secondItem="o46-Nl-3u8" secondAttribute="centerX" id="fGu-x4-MZz"/>
+                            <constraint firstItem="MjD-6i-Ja9" firstAttribute="centerY" secondItem="o46-Nl-3u8" secondAttribute="centerY" id="l5E-wN-9Iu"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fGu-x4-MZz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="summaryLabel" destination="MjD-6i-Ja9" id="o1r-8m-Auf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XFB-zl-Mf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2761" y="675"/>
         </scene>
     </scenes>
     <resources>

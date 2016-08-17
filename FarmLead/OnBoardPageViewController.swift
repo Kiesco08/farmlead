@@ -5,6 +5,8 @@
 //  Created by Zoumite Franck Armel Mamboue on 2016-08-09.
 //  Copyright © 2016 Zoumite Franck Armel Mamboue. All rights reserved.
 //
+// This class represents the story board view controller and is embedded
+// inside of the container view controller
 
 import UIKit
 

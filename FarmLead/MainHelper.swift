@@ -15,10 +15,11 @@ import ObjectMapper
 let FARM_LEAD_GREEN = "4d9e6e"
 let storyboardTotalPages = 3
 let COMMODITY_UNIT_END_POINT = "http://dualstack.FL2-Dev-api02-1164870265.us-east-1.elb.amazonaws.com/api/v2/data"
-let REGION_SEARCH_END_POINT = "http://dualstack.FL2-Dev-api02-1164870265.us-east-1.elb.amazonaws.com/api/v2/search_region"
+let REGION_SEARCH_END_POINT = "http://dualstack.FL2-Dev-api02-1164870265.us-east-1.elb.amazonaws.com/api/v2/data/search_region"
 let COMMODITY_UNIT_KEY = "commodityUnit"
 let SELECTED_COMMODITY_UNIT_KEY = "selectedCommodityUnit"
-let SEARCH_DELAY: Int64 = 3 / 10
+let SELECTED_CITY_KEY = "selectedCity"
+let SEARCH_DELAY: Int64 = 3 / 10 // 300 ms
 
 //MARK: Utility Constants
 let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
@@ -69,7 +70,7 @@ func getCommodityUnits() -> [CommodityUnit]? {
 
 }
 
-func fetchRegions(search: String) {
+func fetchRegions(search: String, completion: (regions: [Region]?) -> ()) {
     
     // Build POST body
     var body = [String: AnyObject]()
@@ -77,14 +78,19 @@ func fetchRegions(search: String) {
     body["search"] = search
     
     callRestApi(REGION_SEARCH_END_POINT, method: .POST, withBody: body) { (statusCode, json, error) in
-        guard let regions = json else {
+        guard let json = json else {
             if let error = error {
                 print("\(error)")
             }
             return
         }
         
-        print(regions)
+        guard let regionPage = Mapper<RegionPage>().map(json.object) else {
+            print("Unable to map region page")
+            return
+        }
+        
+        completion(regions: regionPage.regions)
     }
 }
 

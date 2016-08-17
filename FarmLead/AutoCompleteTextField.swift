@@ -5,6 +5,7 @@
 //  Created by Zoumite Franck Armel Mamboue on 2016-08-09.
 //  Copyright (c) 2015 mnbayan. All rights reserved.
 //
+// This class allows to easily implement autocomplete functionality
 
 import UIKit
 
@@ -73,7 +74,9 @@ public class AutoCompleteTextField:UITextField {
     public override func willMoveToSuperview(newSuperview: UIView?) {
         super.willMoveToSuperview(newSuperview)
         commonInit()
-        setupAutocompleteTable(newSuperview)
+        if let newSuperview = newSuperview {
+            setupAutocompleteTable(newSuperview)
+        }
     }
     
     private func commonInit(){
@@ -81,18 +84,18 @@ public class AutoCompleteTextField:UITextField {
         autoCompleteAttributes = [NSForegroundColorAttributeName:UIColor.blackColor()]
         autoCompleteAttributes![NSFontAttributeName] = UIFont.boldSystemFontOfSize(12)
         self.clearButtonMode = .Always
-        self.addTarget(self, action: #selector(textFieldDidChange), forControlEvents: .EditingChanged)
-        self.addTarget(self, action: #selector(textFieldDidEndEditing), forControlEvents: .EditingDidEnd)
+        self.addTarget(self, action: #selector(AutoCompleteTextField.textFieldDidChange), forControlEvents: .EditingChanged)
+        self.addTarget(self, action: #selector(AutoCompleteTextField.textFieldDidEndEditing), forControlEvents: .EditingDidEnd)
     }
     
-    private func setupAutocompleteTable(view:UIView?){
+    private func setupAutocompleteTable(view:UIView){
         let screenSize = UIScreen.mainScreen().bounds.size
-        let tableView = UITableView(frame: CGRectMake(self.frame.origin.x, self.frame.origin.y + CGRectGetHeight(self.frame), screenSize.width - (self.frame.origin.x * 2), 30.0))
+        let tableView = UITableView(frame: CGRectMake(self.frame.origin.x, self.frame.origin.y + CGRectGetHeight(self.frame) + 44, screenSize.width - (self.frame.origin.x * 2), 30.0))
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = autoCompleteCellHeight
         tableView.hidden = hidesWhenEmpty ?? true
-        view?.addSubview(tableView)
+        view.addSubview(tableView)
         autoCompleteTableView = tableView
         
         autoCompleteTableHeight = 100.0
@@ -186,8 +189,7 @@ extension AutoCompleteTextField: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if cell.respondsToSelector(Selector("setSeparatorInset:")
-            ){
+        if cell.respondsToSelector(Selector("setSeparatorInset:")){
             cell.separatorInset = autoCompleteSeparatorInset
         }
         if cell.respondsToSelector(Selector("setPreservesSuperviewLayoutMargins:")){
