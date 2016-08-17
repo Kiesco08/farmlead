@@ -249,7 +249,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TZ4-eb-4KF" firstAttribute="leading" secondItem="Tyc-me-H2w" secondAttribute="leadingMargin" id="Nck-WZ-ZlM"/>
                             <constraint firstItem="TZ4-eb-4KF" firstAttribute="trailing" secondItem="Tyc-me-H2w" secondAttribute="trailingMargin" id="SQz-Dj-Yyp"/>
